@@ -12,11 +12,6 @@ const data = [
     options: [ 'Male', 'Female' ]
   },
   {
-    id: 6,
-    type: 'date',
-    title: 'What date of birth?'
-  },
-  {
     id: 2,
     type: 'number',
     title: 'How many Banh Chung season have you gone through?'
@@ -46,6 +41,11 @@ const data = [
     type: 'checkbox', 
     title: 'Some related-to-you tags:',
     options: [ 'Bread🍔', 'Pizza 🍕', 'Dog 🐶', 'Cat 😽']
+  },
+  {
+    id: 6,
+    type: 'date',
+    title: 'When do we have a meeting?'
   },
   {
     id: 8,
