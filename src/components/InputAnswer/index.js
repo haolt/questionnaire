@@ -4,13 +4,18 @@ import StyledInput from './styles';
 
 export default class InputAnswer extends Component {
 
-  noAction = () => { javascript:void(0); }
   render() {
-    const { type, option, handleChange, hanldeChangeCheckBox } = this.props;
+    const {
+      type, option, handleChange, hanldeChangeCheckBox
+    } = this.props;
     const name = type === 'radio'? this.props.name : (type === 'text' ? 'name' : (type === 'number' ? 'age' : (type === 'date' ? 'meeting' : '')));
     return (
       <>
-        <StyledInput type={type} name={name} id={option} onChange={handleChange}
+        <StyledInput
+          type={type}
+          name={name}
+          id={option}
+          onChange={handleChange}
           onClick={ type === 'checkbox' ? hanldeChangeCheckBox : this.noAction }
           defaultValue={ type === 'text' ? '' : (((type === 'radio') || (type === 'checkbox')) && option) }
         />
@@ -23,8 +28,7 @@ export default class InputAnswer extends Component {
 
 InputAnswer.propTypes = {
   type: PropTypes.string.isRequired,
-  option: PropTypes.string
 };
 InputAnswer.defaultValue = {
-  option: []
+  option: [],
 };

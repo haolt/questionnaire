@@ -4,7 +4,7 @@ import InputAnswer from '../InputAnswer';
 import StyleCheckbox from './styles';
 
 const CheckboxAnswer = (props) => {
-  const { options, handleChange, hanldeChangeCheckBox, name } = props;
+  const { options, hanldeChangeCheckBox, name } = props;
   return (
     <StyleCheckbox>
       { options.map((option) => <InputAnswer key={option} type="checkbox" option={option} name={name}  id={option} hanldeChangeCheckBox={hanldeChangeCheckBox}/>)}
