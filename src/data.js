@@ -25,20 +25,16 @@ const data = [
     ]
   },
   {
-    id: 3,
-    type: 'text', 
-    title: 'What do you do?'
-  },
-  {
     id: 5,
     type: 'radio',
-    name: 'star-rating',
+    name: 'relationshipRating',
     title: 'Rating our relationship?',
     options: [ 'Speechless (1/3)', 'Fine (2/3)', 'So good (3/3)']
   },
   {
     id: 9,
-    type: 'checkbox', 
+    type: 'checkbox',
+    name: 'relatedTags',
     title: 'Some related-to-you tags:',
     options: [ 'Bread🍔', 'Pizza 🍕', 'Dog 🐶', 'Cat 😽']
   },

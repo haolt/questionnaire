@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../InputAnswer';
+import InputAnswer from '../InputAnswer';
 import StyledRadio from './styles';
 
 const RadioAnswer = (props) => {
-  const { options, name } = props;
+  const { options, name, handleChange } = props;
   return (
-    <StyledRadio>
-      { options.map((option) => <Input key={option} type="radio" name={name} id={option} option={option} />)}
+    <StyledRadio onChange={handleChange}>
+      { options.map((option) => <InputAnswer key={option} type="radio" name={name} id={option} option={option} />)}
     </StyledRadio>
   );
 };

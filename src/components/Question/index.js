@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import InputAnswer from '../InputAnswer';
@@ -10,26 +9,27 @@ import CheckboxAnswer from '../CheckboxAnswer';
 import TextareaAnswer from '../TextareaAnswer';
 import SelectionAnswer from '../SelectionAnswer';
 import RobotCapcha from '../RobotCapcha';
-import QuestionTitle from './styles';
+import { QuestionTitle, StyledQuestion } from './styles';
 
 export default class Question extends Component {
   showAnswer = () => {
-    const { handleChange, question } = this.props;
+    const { question, verifyCapcha } = this.props;
     switch (question.type) {
       case 'text':
       case 'number':
       case 'date':
-        return <InputAnswer type={question.type} />;
+        return <InputAnswer type={question.type} {...this.props}/>;
       case 'radio':
-        return <RadioAnswer options={question.options} name={question.name} />;
+        return <RadioAnswer options={question.options} name={question.name} {...this.props}/>;
       case 'checkbox':
-        return <CheckboxAnswer options={question.options} />;
+        return <CheckboxAnswer options={question.options} name={question.name} {...this.props}/>;
       case 'select':
+        // return <SelectionAnswer options={question.options} handleChange={() => handleChange()} />;
         return <SelectionAnswer options={question.options} {...this.props} />;
       case 'textarea':
-        return <TextareaAnswer />;
+        return <TextareaAnswer {...this.props}/>;
       case 'capcha':
-        return <RobotCapcha />;
+        return <RobotCapcha verifyCapcha={verifyCapcha} />;
       default:
         break;
     }
@@ -50,10 +50,6 @@ export default class Question extends Component {
     );
   }
 }
-
-const StyledQuestion = styled.div`
-  margin: 2.5em 0;
-`;
 
 Question.propTypes = {
   question: PropTypes.shape({

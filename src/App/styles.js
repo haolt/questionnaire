@@ -52,5 +52,12 @@ export const Button = styled.button`
     border: 2px solid #2980b9;
     transition: 0.25s;
     outline: none;
+  };
+  :disabled {
+    opacity: 0.6;
+  }
+  :disabled:hover {
+    background: #2980b9;
+    color: #fff;
   }
 `;

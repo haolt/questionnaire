@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import StyledInput from './styles';
 
 export default class InputAnswer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-  }
 
+  noAction = () => { javascript:void(0); }
   render() {
-    const { type, option, name } = this.props;
-    // const { value } = this.state;
+    const { type, option, handleChange, hanldeChangeCheckBox } = this.props;
+    const name = type === 'radio'? this.props.name : (type === 'text' ? 'name' : (type === 'number' ? 'age' : (type === 'date' ? 'meeting' : '')));
     return (
       <>
-        <StyledInput type={type} name={name} id={option} />
+        <StyledInput type={type} name={name} id={option} onChange={handleChange}
+          onClick={ type === 'checkbox' ? hanldeChangeCheckBox : this.noAction }
+          defaultValue={ type === 'text' ? '' : (((type === 'radio') || (type === 'checkbox')) && option) }
+        />
         <label htmlFor={option}>{option}</label>
         &nbsp;&nbsp;&nbsp;&nbsp;
       </>
@@ -23,6 +23,8 @@ export default class InputAnswer extends Component {
 
 InputAnswer.propTypes = {
   type: PropTypes.string.isRequired,
-  option: PropTypes.string,
-  name: PropTypes.string,
+  option: PropTypes.string
+};
+InputAnswer.defaultValue = {
+  option: []
 };

@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../InputAnswer';
+import InputAnswer from '../InputAnswer';
 import StyleCheckbox from './styles';
 
 const CheckboxAnswer = (props) => {
-  const { options } = props;
+  const { options, handleChange, hanldeChangeCheckBox, name } = props;
   return (
     <StyleCheckbox>
-      { options.map((option) => <Input key={option} type="checkbox" option={option} />)}
+      { options.map((option) => <InputAnswer key={option} type="checkbox" option={option} name={name}  id={option} hanldeChangeCheckBox={hanldeChangeCheckBox}/>)}
     </StyleCheckbox>
   );
 };
-
 export default CheckboxAnswer;
 
 CheckboxAnswer.propTypes = {
