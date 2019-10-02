@@ -15,7 +15,7 @@ const SelectionAnswer = (props) => {
       }
     </StyledSelect>
   );
-}
+};
 
 export default SelectionAnswer;
 

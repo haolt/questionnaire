@@ -22,7 +22,7 @@ const Result = (props) => {
     name,
     relatedTags,
     relationshipRating,
-    status
+    status,
   } = props.location.state.dataFromForm;
   return (
     <>
@@ -59,6 +59,6 @@ const Result = (props) => {
       </p>
     </>
   );
-} 
+};
 
 export default Result;

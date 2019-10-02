@@ -80,7 +80,7 @@ export default class Questionnaire extends Component {
       },
       function _checkFullField() {
         this.checkFullField();
-      })
+      });
     } else {
       relatedTags.push(curentTag);
       this.setState({

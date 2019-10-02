@@ -18,16 +18,16 @@ export default class Question extends Component {
       case 'text':
       case 'number':
       case 'date':
-        return <InputAnswer type={question.type} {...this.props}/>;
+        return <InputAnswer type={question.type} {...this.props} />;
       case 'radio':
-        return <RadioAnswer options={question.options} name={question.name} {...this.props}/>;
+        return <RadioAnswer options={question.options} name={question.name} {...this.props} />;
       case 'checkbox':
-        return <CheckboxAnswer options={question.options} name={question.name} {...this.props}/>;
+        return <CheckboxAnswer options={question.options} name={question.name} {...this.props} />;
       case 'select':
         // return <SelectionAnswer options={question.options} handleChange={() => handleChange()} />;
         return <SelectionAnswer options={question.options} {...this.props} />;
       case 'textarea':
-        return <TextareaAnswer {...this.props}/>;
+        return <TextareaAnswer {...this.props} />;
       case 'capcha':
         return <RobotCapcha verifyCapcha={verifyCapcha} />;
       default:

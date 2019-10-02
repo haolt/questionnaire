@@ -7,7 +7,7 @@ const CheckboxAnswer = (props) => {
   const { options, hanldeChangeCheckBox, name } = props;
   return (
     <StyleCheckbox>
-      { options.map((option) => <InputAnswer key={option} type="checkbox" option={option} name={name}  id={option} hanldeChangeCheckBox={hanldeChangeCheckBox}/>)}
+      { options.map((option) => <InputAnswer key={option} type="checkbox" option={option} name={name} id={option} hanldeChangeCheckBox={hanldeChangeCheckBox} />)}
     </StyleCheckbox>
   );
 };
